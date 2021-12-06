@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { Route } from "wouter";
 import Layout from "./components/layout/Layout";
-import ListOfCharacter from "./components/ListOfCharacter";
-
+import SearchResutls from "./pages/Search/SearchResutls";
+import Home from "./pages/Home/Home";
 function App() {
-  const [search, setSearch] = useState("");
   return (
-    <Layout setSearch={setSearch}>
-      <ListOfCharacter search={search} />
+    <Layout>
+      <Route component={Home} path="/" />
+      <Route component={SearchResutls} path="/search/:keyword" />
     </Layout>
   );
 }

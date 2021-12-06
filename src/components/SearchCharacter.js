@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import styled from "styled-components";
+import { useLocation } from "wouter";
 
 const SearchCharacter = ({ setSearch }) => {
   const [inputValue, setInputValue] = useState("");
+  const [path, pushLocation] = useLocation();
 
   const handleOnchange = (envt) => {
     setInputValue(envt.target.value);
   };
   const handleSubmit = (envt) => {
     envt.preventDefault();
-    setSearch(inputValue);
+    pushLocation(`/search/${inputValue}`);
   };
 
   return (

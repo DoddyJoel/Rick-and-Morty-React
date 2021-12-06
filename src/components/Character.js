@@ -4,7 +4,7 @@ import Tilt from "./animation/Tilt";
 const Character = ({ image, name, species, nameLocation, status }) => {
   const setColor = (status) => {
     if (status === "Alive") {
-      return "#2a9d8f";
+      return "#80ed99";
     } else if (status === "Dead") {
       return "#E24D28";
     } else {

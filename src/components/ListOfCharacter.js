@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import getCharacter from "../service/getCharacter";
+
 import Character from "./Character";
 
-export default function ListOfCharacter({ search }) {
-  const [rkImg, setRkImg] = useState([]);
-  useEffect(() => {
-    getCharacter(search).then((item) => setRkImg(item));
-  }, [search]);
+export default function ListOfCharacter({ rkImg }) {
   return (
     <ContentWrapper>
       {rkImg.map((item) => (
